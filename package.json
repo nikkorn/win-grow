@@ -1,0 +1,22 @@
+{
+  "name": "win-grow",
+  "version": "1.0.0",
+  "description": "Simple tool for enlarging elements to fill the browser window.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nikkorn/win-grow.git"
+  },
+  "keywords": [
+    "window",
+    "grow",
+    "full",
+    "screen",
+    "fullscreen"
+  ],
+  "author": "Nikolas Howard",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nikkorn/win-grow/issues"
+  },
+  "homepage": "https://github.com/nikkorn/win-grow#readme"
+}
