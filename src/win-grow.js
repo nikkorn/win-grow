@@ -21,6 +21,9 @@
             right: "0"
         });
 
+        /** Add a class to any expanded elements to allow for custom styling. */
+        element.classList.add("win-grow-expanded");
+
         return elementDetails;
     };
 
@@ -34,10 +37,10 @@
             if (!this.fullscreenElement) {
                 this.fullscreenElement = expandElement(element);
             } else {
-				/** Check to see if the supplied element is the one which is filling the window. */
-				var elementsMatch = this.fullscreenElement.element === element;
-				/** Close the element which is fillign the window. */
-				this.close();
+                /** Check to see if the supplied element is the one which is filling the window. */
+                var elementsMatch = this.fullscreenElement.element === element;
+                /** Close the element which is fillign the window. */
+                this.close();
                 /** If toggle was called with a different element, make it fill the window. */
                 if (!elementsMatch) {
                     /** Make the new element fill the window. */
@@ -59,7 +62,10 @@
                     right: this.fullscreenElement.right
                 });
 
-				/** Remove our full window element. */
+                /** Remove the expanded elements class. */
+                this.fullscreenElement.element.classList.remove("win-grow-expanded");
+
+                /** Remove our full window element. */
                 this.fullscreenElement = null;
             }
         },
