@@ -14,6 +14,10 @@
     "fullscreen"
   ],
   "author": "Nikolas Howard",
+  "main": "dist/win-grow.js",
+  "files": [
+    "dist/win-grow.js"
+  ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/nikkorn/win-grow/issues"
