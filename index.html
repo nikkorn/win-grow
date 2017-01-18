@@ -6,6 +6,15 @@
 <body>
   <script src="src/win-grow.js"></script>
 
-  <div id="target" style="background-color: #ff00ff;"><h1>Hi</h1></div>
+  <div id="target" style="background-color: #ff00ff;">
+	<h1>Box 1</h1>
+	<button type="button" onclick="wingrow.toggle(document.getElementById('target'))">Toggle!</button>
+  </div>
+  
+   <div id="target-2" style="background-color: #ffbbaa;">
+	<h1>Box 2</h1>
+	<button type="button" onclick="wingrow.toggle(document.getElementById('target-2'))">Toggle!</button>
+  </div>
+  
 </body>
 </html>
