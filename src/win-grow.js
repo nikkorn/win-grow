@@ -9,16 +9,20 @@
             bottom: element.style.bottom,
             left: element.style.left,
             right: element.style.right,
+			width: element.style.width,
+            height: element.style.height,
             position: element.style.position
         };
 
         /** Make the element fill the window. */
         Object.assign(element.style, {
-            position: "absolute",
+            position: "fixed",
             top: "0",
             bottom: "0",
             left: "0",
-            right: "0"
+            right: "0",
+			width: "100%",
+            height: "100%"
         });
 
         /** Add a class to any expanded elements to allow for custom styling. */
@@ -59,7 +63,9 @@
                     top: this.fullscreenElement.top,
                     bottom: this.fullscreenElement.bottom,
                     left: this.fullscreenElement.left,
-                    right: this.fullscreenElement.right
+                    right: this.fullscreenElement.right,
+					width: this.fullscreenElement.width,
+                    height: this.fullscreenElement.height
                 });
 
                 /** Remove the expanded elements class. */
