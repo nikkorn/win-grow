@@ -34,25 +34,14 @@
             if (!this.fullscreenElement) {
                 this.fullscreenElement = expandElement(element);
             } else {
-                /** Check to see if the supplied element is the one which is filling the window. */
-                if (this.fullscreenElement.element !== element) {
-                    /** We are toggling a different element to the one which is filling the window. */
-                    this.close();
-
+				/** Check to see if the supplied element is the one which is filling the window. */
+				var elementsMatch = this.fullscreenElement.element === element;
+				/** Close the element which is fillign the window. */
+				this.close();
+                /** If toggle was called with a different element, make it fill the window. */
+                if (!elementsMatch) {
                     /** Make the new element fill the window. */
                     this.fullscreenElement = expandElement(element);
-                } else {
-                    /** Assign the element its originla dimensions. */
-                    Object.assign(element.style, {
-                        position: this.fullscreenElement.position,
-                        top: this.fullscreenElement.top,
-                        bottom: this.fullscreenElement.bottom,
-                        left: this.fullscreenElement.left,
-                        right: this.fullscreenElement.right
-                    });
-
-                    /** Remove our full window element. */
-                    this.fullscreenElement = null;
                 }
             }
         },
@@ -70,6 +59,7 @@
                     right: this.fullscreenElement.right
                 });
 
+				/** Remove our full window element. */
                 this.fullscreenElement = null;
             }
         },
