@@ -1,6 +1,6 @@
 /*!
 * win-grow
-* v1.0.0 - 18-01-2017
+* v1.0.2 - 18-01-2017
 * (c) Nikolas Howard; MIT License
 */
 (function() {
@@ -14,21 +14,19 @@
             bottom: element.style.bottom,
             left: element.style.left,
             right: element.style.right,
-			width: element.style.width,
+            width: element.style.width,
             height: element.style.height,
             position: element.style.position
         };
 
         /** Make the element fill the window. */
-        Object.assign(element.style, {
-            position: "fixed",
-            top: "0",
-            bottom: "0",
-            left: "0",
-            right: "0",
-			width: "100%",
-            height: "100%"
-        });
+        element.style.position = "fixed";
+        element.style.top = "0";
+        element.style.bottom = "0";
+        element.style.left = "0";
+        element.style.right = "0";
+        element.style.width = "100%";
+        element.style.height = "100%";
 
         /** Add a class to any expanded elements to allow for custom styling. */
         element.classList.add("win-grow-expanded");
@@ -63,15 +61,14 @@
             /** Check to see if we even have an element filling our browser window. */
             if (this.fullscreenElement) {
                 /** Assign the element its original dimensions. */
-                Object.assign(this.fullscreenElement.element.style, {
-                    position: this.fullscreenElement.position,
-                    top: this.fullscreenElement.top,
-                    bottom: this.fullscreenElement.bottom,
-                    left: this.fullscreenElement.left,
-                    right: this.fullscreenElement.right,
-					width: this.fullscreenElement.width,
-                    height: this.fullscreenElement.height
-                });
+                var element = this.fullscreenElement.element;
+                element.style.position = this.fullscreenElement.position;
+                element.style.top = this.fullscreenElement.top;
+                element.style.bottom = this.fullscreenElement.bottom;
+                element.style.left = this.fullscreenElement.left;
+                element.style.right = this.fullscreenElement.right;
+                element.style.width = this.fullscreenElement.width;
+                element.style.height = this.fullscreenElement.height;
 
                 /** Remove the expanded elements class. */
                 this.fullscreenElement.element.classList.remove("win-grow-expanded");
