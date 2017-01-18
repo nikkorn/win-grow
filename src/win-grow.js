@@ -1,8 +1,7 @@
 (function() {
     "use strict";
 
-    var expandElement = function(element) 
-	{
+    var expandElement = function(element) {
         /** Store the element and its original dimensions. */
         var elementDetails = {
             element: element,
@@ -30,48 +29,39 @@
         fullscreenElement: null,
 
         /** Toggle an element to fill the browser window. */
-        toggle: function(element) 
-		{
-			/** Check to see if we already have an element filling our browser window. */
-            if (!this.fullscreenElement) 
-			{
+        toggle: function(element) {
+            /** Check to see if we already have an element filling our browser window. */
+            if (!this.fullscreenElement) {
                 this.fullscreenElement = expandElement(element);
-            } 
-			else 
-			{
-				/** Check to see if the supplied element is the one which is filling the window. */
-                if (this.fullscreenElement.element !== element) 
-				{
-					/** We are toggling a different element to the one which is filling the window. */
-					this.close();
-					
-					/** Make the new element fill the window. */
-					this.fullscreenElement = expandElement(element);
-                }
-				else
-				{
-					/** Assign the element its originla dimensions. */
-					Object.assign(element.style, {
-						position: this.fullscreenElement.position,
-						top: this.fullscreenElement.top,
-						bottom: this.fullscreenElement.bottom,
-						left: this.fullscreenElement.left,
-						right: this.fullscreenElement.right
-					});
+            } else {
+                /** Check to see if the supplied element is the one which is filling the window. */
+                if (this.fullscreenElement.element !== element) {
+                    /** We are toggling a different element to the one which is filling the window. */
+                    this.close();
 
-					/** Remove our full window element. */
-					this.fullscreenElement = null;
-				}
+                    /** Make the new element fill the window. */
+                    this.fullscreenElement = expandElement(element);
+                } else {
+                    /** Assign the element its originla dimensions. */
+                    Object.assign(element.style, {
+                        position: this.fullscreenElement.position,
+                        top: this.fullscreenElement.top,
+                        bottom: this.fullscreenElement.bottom,
+                        left: this.fullscreenElement.left,
+                        right: this.fullscreenElement.right
+                    });
+
+                    /** Remove our full window element. */
+                    this.fullscreenElement = null;
+                }
             }
         },
-		
-		/** If an element is currently filling the window then close it. */
-        close: function() 
-		{
-			/** Check to see if we even have an element filling our browser window. */
-			if (this.fullscreenElement) 
-			{
-				/** Assign the element its original dimensions. */
+
+        /** If an element is currently filling the window then close it. */
+        close: function() {
+            /** Check to see if we even have an element filling our browser window. */
+            if (this.fullscreenElement) {
+                /** Assign the element its original dimensions. */
                 Object.assign(this.fullscreenElement.element.style, {
                     position: this.fullscreenElement.position,
                     top: this.fullscreenElement.top,
@@ -83,11 +73,10 @@
                 this.fullscreenElement = null;
             }
         },
-		
-		/** Returns whether wingrow is filling the browser window with an element. */
-        isWindowFilled: function() 
-		{
-			return !!this.fullscreenElement;
+
+        /** Returns whether wingrow is filling the browser window with an element. */
+        isWindowFilled: function() {
+            return !!this.fullscreenElement;
         }
     };
 
