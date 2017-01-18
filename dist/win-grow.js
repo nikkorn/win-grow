@@ -1,6 +1,6 @@
 /*!
 * win-grow
-* v1.0.2 - 18-01-2017
+* v1.0.3 - 18-01-2017
 * (c) Nikolas Howard; MIT License
 */
 (function() {
