@@ -40,7 +40,7 @@ wingrow.toggle(firstElement);
 /** Make the second element fit the browser window. */
 wingrow.toggle(secondElement);
 
-/** Revert an expanded element is there is one. */
+/** Revert an expanded element if there is one. */
 wingrow.close();
 ```
 
@@ -60,7 +60,7 @@ Returns `true` if `win-grow` is filling the window with an expanded element.
 
 #### .close()
 
-Will revert any currently expanded element to its original position and dimenstions.
+Will revert any currently expanded element to its original position and dimensions.
 
 
 

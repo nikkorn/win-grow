@@ -15,8 +15,9 @@
   ],
   "author": "Nikolas Howard",
   "main": "dist/win-grow.js",
+  "types": "dist/win-grow.d.ts",
   "files": [
-    "dist/win-grow.js"
+    "dist/*"
   ],
   "license": "MIT",
   "bugs": {
