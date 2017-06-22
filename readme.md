@@ -54,9 +54,11 @@ If this method is called with an element which is expanded using `win-grow`, it 
 
 If there is already an expanded element, and this method is called with a different element, the actively expanded element will be switched to the new one.
 
-#### .isWindowFilled()
+#### .isWindowFilled([element])
 
 Returns `true` if `win-grow` is filling the window with an expanded element.
+
+If an element is passed this returns true if the specified element is filling the window.
 
 #### .close()
 
@@ -66,4 +68,4 @@ Will revert any currently expanded element to its original position and dimensio
 
 ## License
 
-MIT © [Nikolas Howard]
+MIT ï¿½ [Nikolas Howard]

@@ -1,4 +1,4 @@
-// Type definitions for win-grow.js 1.0.4
+// Type definitions for win-grow.js 1.1.0
 // Project: https://github.com/nikkorn/win-grow
 
 declare namespace wingrow
