@@ -3,12 +3,22 @@
 
 declare namespace wingrow
 {
-	/** Accepts a DOM element and expands it to fill the browser window. */
-	function toggle(elem: Element): void;
+	/**
+	 * Expands the specified element to fill the browser window.
+	 * @param element The element to expand.
+	 */
+	function toggle(element: Element): void;
 	
-	/** Returns true if win-grow is filling the window with an expanded element. */
-	function isWindowFilled(): boolean;
+	/**
+	 * By default this returns true if *any* element is filling the window.
+	 * If an element is passed this returns true if the specified element is filling the window.
+	 * @param element Optionally the element to check.
+	 * @returns Whether the window is filled.
+	 */
+	function isWindowFilled(element?: Element): boolean;
 	
-	/** Revert any currently expanded element to its original position and dimensions. */
+	/**
+	 * Revert any currently expanded element to its original position and dimensions.
+	 */
 	function close(): void;
 }
