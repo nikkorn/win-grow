@@ -1,8 +1,3 @@
-/*!
-* win-grow
-* v1.0.4 - 19-01-2017
-* (c) Nikolas Howard; MIT License
-*/
 (function() {
     "use strict";
 
@@ -79,8 +74,12 @@
         },
 
         /** Returns whether wingrow is filling the browser window with an element. */
-        isWindowFilled: function() {
-            return !!this.fullscreenElement;
+        isWindowFilled: function(element) {
+            if (element) {
+                return this.fullscreenElement.element === element;
+            } else {
+                return !!this.fullscreenElement;
+            }
         }
     };
 
