@@ -76,7 +76,7 @@
         /** Returns whether wingrow is filling the browser window with an element. */
         isWindowFilled: function(element) {
             if (element) {
-                return this.fullscreenElement.element === element;
+                return this.fullscreenElement && this.fullscreenElement.element === element;
             } else {
                 return !!this.fullscreenElement;
             }
