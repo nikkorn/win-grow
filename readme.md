@@ -68,4 +68,4 @@ Will revert any currently expanded element to its original position and dimensio
 
 ## License
 
-MIT � [Nikolas Howard]
+MIT © [Nikolas Howard]
